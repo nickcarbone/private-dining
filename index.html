@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Dining Intelligence | A Field Manual for the Rooms Behind the Rooms</title>
+  <meta name="description" content="A guide to accessing chef's tables, omakase counters, supper clubs, and private dining rooms in DC, New York, and London.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:            #0B0A08;
+      --surface:       #131110;
+      --surface-up:    #1D1A16;
+      --border:        #2C2722;
+      --border-light:  #3A342D;
+      --text:          #DDD5C4;
+      --text-muted:    #7A7063;
+      --text-dim:      #3F3830;
+      --gold:          #BF9840;
+      --gold-light:    #D9B95E;
+      --gold-dim:      #7A622A;
+      --burgundy:      #892B33;
+      --cream:         #F0E8D8;
+      --green-ok:      #4A7C59;
+      --amber:         #A6763A;
+      --red:           #7A2929;
+
+      --font-display:  'Cormorant Garamond', Georgia, serif;
+      --font-body:     'EB Garamond', Georgia, serif;
+      --font-mono:     'Courier Prime', 'Courier New', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ═══════════════════════════════════════
+       UTILITY
+    ═══════════════════════════════════════ */
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    .rule-gold {
+      border: none;
+      border-top: 1px solid var(--gold-dim);
+      margin: 3rem 0;
+    }
+
+    .muted { color: var(--text-muted); }
+    .gold  { color: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 10, 8, 0.95);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-mark {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      padding: 5rem 2rem 4rem;
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-stamp {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-stamp span {
+      color: var(--gold-dim);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-doctrine {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text);
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-doctrine p + p {
+      margin-top: 1rem;
+    }
+
+    /* ═══════════════════════════════════════
+       CONTENTS
+    ═══════════════════════════════════════ */
+    .contents {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contents-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 3rem;
+    }
+
+    .contents-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .contents-num {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--gold-dim);
+      letter-spacing: 0.15em;
+      flex-shrink: 0;
+    }
+
+    .contents-item a {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      line-height: 1.5;
+    }
+
+    .contents-item a:hover { color: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       SECTIONS
+    ═══════════════════════════════════════ */
+    .section {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-number {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    .section h2 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .section-deck {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .section h3 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.45rem;
+      color: var(--cream);
+      margin: 2.5rem 0 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .section h4 {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 2rem 0 0.75rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 1.1rem;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul, .section ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .section li {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .section li strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    /* Pull quote */
+    .pullquote {
+      border-left: 2px solid var(--gold);
+      padding: 0.75rem 0 0.75rem 1.75rem;
+      margin: 2rem 0;
+    }
+
+    .pullquote p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--cream);
+      margin: 0;
+    }
+
+    .pullquote cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-style: normal;
+    }
+
+    /* ═══════════════════════════════════════
+       VENUE FILE CARDS
+    ═══════════════════════════════════════ */
+    .venue-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .venue-card {
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .venue-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 1rem 1.25rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .venue-card-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .venue-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .venue-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .venue-location {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .venue-tier {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid currentColor;
+    }
+
+    .tier-open    { color: var(--green-ok); border-color: var(--green-ok); }
+    .tier-medium  { color: var(--amber); border-color: var(--amber); }
+    .tier-hard    { color: var(--burgundy); border-color: var(--burgundy); }
+    .tier-invite  { color: var(--gold); border-color: var(--gold); }
+
+    .venue-meta {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta-row {
+      display: contents;
+    }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 0.4rem 1rem 0.4rem 1.25rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+    }
+
+    .meta-value {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text);
+      padding: 0.4rem 1rem 0.4rem 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+    }
+
+    .meta-row:last-child .meta-label,
+    .meta-row:last-child .meta-value {
+      border-bottom: none;
+    }
+
+    .venue-intel {
+      padding: 1.25rem 1.25rem 1.25rem;
+    }
+
+    .venue-intel p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .venue-intel p:last-child { margin-bottom: 0; }
+
+    .venue-intel strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    /* Access strategy box */
+    .access-box {
+      background: var(--surface-up);
+      border: 1px solid var(--border-light);
+      border-left: 2px solid var(--gold);
+      padding: 0.85rem 1rem;
+      margin-top: 0.85rem;
+    }
+
+    .access-box-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .access-box p {
+      font-size: 0.88rem !important;
+      color: var(--text-muted) !important;
+      line-height: 1.7 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* ═══════════════════════════════════════
+       CITY DIVIDERS
+    ═══════════════════════════════════════ */
+    .city-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .city-name {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .city-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ═══════════════════════════════════════
+       DISCOVERY METHODS
+    ═══════════════════════════════════════ */
+    .method-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .method-item {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.75rem;
+      align-items: baseline;
+    }
+
+    .method-num {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gold-dim);
+      letter-spacing: 0.1em;
+      text-align: right;
+    }
+
+    .method-text {
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .method-text strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════
+       PLAYBOOK STEPS
+    ═══════════════════════════════════════ */
+    .playbook-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .playbook-section + .playbook-section { margin-top: 1rem; }
+
+    .playbook-title {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .playbook-section p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 0.85rem;
+    }
+
+    .playbook-section p:last-child { margin-bottom: 0; }
+
+    .playbook-section strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    .playbook-section ul {
+      padding-left: 1.25rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .playbook-section li {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    /* ═══════════════════════════════════════
+       ACCESS MATRIX (APPENDIX)
+    ═══════════════════════════════════════ */
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+    }
+
+    .matrix-table th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--gold-dim);
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .matrix-table td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .matrix-table tr:last-child td { border-bottom: none; }
+
+    .matrix-table td:first-child {
+      color: var(--cream);
+      font-weight: 700;
+    }
+
+    .matrix-table td.tier-cell-open   { color: var(--green-ok); }
+    .matrix-table td.tier-cell-medium { color: var(--amber); }
+    .matrix-table td.tier-cell-hard   { color: var(--burgundy); }
+    .matrix-table td.tier-cell-invite { color: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       NOTE BOX
+    ═══════════════════════════════════════ */
+    .note-box {
+      border: 1px solid var(--border-light);
+      background: var(--surface);
+      padding: 1rem 1.25rem;
+      margin: 2rem 0;
+    }
+
+    .note-box-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .note-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-mark {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 680px) {
+      nav { padding: 0.75rem 1rem; }
+      .nav-links { display: none; }
+      .hero { padding: 3rem 1.25rem 2.5rem; }
+      .section { padding: 3rem 1.25rem; }
+      .contents { padding: 2rem 1.25rem; }
+      .contents-inner { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.25rem; flex-direction: column; gap: 1rem; }
+      .venue-card-header { flex-direction: column; gap: 0.75rem; }
+      .matrix-table { font-size: 0.55rem; }
+      .matrix-table th, .matrix-table td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-mark">PRIVATE DINING INTELLIGENCE</span>
+    <ul class="nav-links">
+      <li><a href="#chefs-tables">Chef's Tables</a></li>
+      <li><a href="#omakase">Omakase</a></li>
+      <li><a href="#underground">Underground</a></li>
+      <li><a href="#clubs">Clubs</a></li>
+      <li><a href="#playbook">Playbook</a></li>
+      <li><a href="#matrix">Matrix</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-stamp">Edition I &nbsp;·&nbsp; <span>For Private Circulation</span> &nbsp;·&nbsp; DC / NYC / London</div>
+
+    <h1>Private Dining<br><em>Intelligence</em></h1>
+
+    <p class="hero-subtitle">A Field Manual for the Rooms Behind the Rooms</p>
+
+    <div class="hero-doctrine">
+      <p>This is not a restaurant guide. Yelp, OpenTable, and the Michelin app exist for that. This is a guide to a different problem: how the best rooms in the best restaurants actually get allocated, who actually controls access, what the mailing lists are, how to find the underground dinner circuit in three cities, and what to say and do once you're inside.</p>
+      <p>The barrier to private dining is almost never money. It is information, and then relationship. Money matters at the far end, but the first gate is almost always knowledge — knowing that the room exists, knowing which channel to use, and knowing how to present yourself when you call. This brief is the information layer. The relationship is yours to build.</p>
+    </div>
+
+    <div class="note-box" style="text-align:left; margin: 0 auto; max-width: 640px;">
+      <div class="note-box-label">Verification Note</div>
+      <p>Prices, seat counts, and booking mechanics shift. Treat all figures here as directionally accurate reference points; always verify with the venue before committing. Some venues listed have undergone ownership or format changes since the research below was compiled. Where significant uncertainty exists, it is noted inline.</p>
+    </div>
+  </header>
+
+  <!-- CONTENTS -->
+  <nav class="contents" aria-label="Table of contents">
+    <div class="eyebrow" style="margin-bottom:1.25rem;">Contents</div>
+    <div class="contents-inner">
+      <div class="contents-item">
+        <span class="contents-num">I</span>
+        <a href="#chefs-tables">Chef's Tables — History & Access Architecture</a>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">IV</span>
+        <a href="#clubs">Members' Clubs with Serious Dining Arms</a>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">II</span>
+        <a href="#omakase">Omakase Counters — Philosophy, Format & Access</a>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">V</span>
+        <a href="#playbook">The Behavioral Playbook</a>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">III</span>
+        <a href="#underground">Supper Clubs & the Underground Circuit</a>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">VI</span>
+        <a href="#matrix">Quick-Reference Access Matrix</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SECTION I: CHEF'S TABLES                            -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <section class="section" id="chefs-tables">
+    <div class="section-header">
+      <span class="section-number">Section I</span>
+      <h2>The Chef's Table<br><em>History, Mechanics & Access</em></h2>
+      <p class="section-deck">From kitchen staff leftovers to the most coveted seat in American dining — and how the allocation actually works.</p>
+    </div>
+
+    <h3>The Origins</h3>
+
+    <p>The phrase <em>table du chef</em> has unglamorous roots. In the classic French brigade kitchen — the Escoffier model, codified in the late 19th century — the chef's table was simply where kitchen staff took their meals, typically a plain table near the pass or in a back corner of the kitchen, set apart from the formality of the dining room. The food was real, often excellent (the brigade ate what was being tested, trimmed, or mis-fired), but the table itself was a working surface, not a destination.</p>
+
+    <p>The transformation of this concept into a prestige experience is largely an American story, and largely a story of the 1980s and 1990s. Daniel Boulud, then at Le Cirque in New York and later at his own Restaurant Daniel (opened 1993), began seating VIPs — close friends, press, visiting chefs, important corporate accounts — at a small table in the kitchen during service. The innovation was theatrical: you watched the brigade execute at full speed, in real time, from inches away. It collapsed the formal separation between production and consumption that defined the haute cuisine dining room, and it created a sense of privileged proximity that the dining room, however elegant, could not replicate.</p>
+
+    <p>Thomas Keller at The French Laundry in Yountville, California — opened 1994 — took this further and arguably institutionalized the modern chef's table as the apex of American dining. Keller's kitchen table, a small arrangement seating two to four guests inside the working kitchen, became the most sought-after restaurant reservation in the country. It remains so. Being at that table, watching Keller's team execute their mise en place with monastic precision, is a genuinely different kind of dining experience — not merely a good dinner, but an education in craft.</p>
+
+    <p>By the 2000s, the term had been diluted. Any private room attached to a restaurant began advertising itself as a "chef's table" — which is why the taxonomy below matters.</p>
+
+    <h3>What a Chef's Table Actually Is</h3>
+
+    <p>There are meaningfully different things being described by this phrase, and conflating them leads to disappointment:</p>
+
+    <ul>
+      <li><strong>True kitchen tables.</strong> Physically inside the working kitchen. You are in the production space — the heat, the noise, the organized chaos. Usually two to eight seats. Often no fixed menu; the kitchen sends what they want to show. French Laundry, Per Se, Le Bernardin, Alinea.</li>
+      <li><strong>Pass-facing counter seats.</strong> Seated at the expediting pass, facing the kitchen through glass or an open window. You see the food being plated, hear the tickets being called, but you are technically in the dining room. Increasingly common in new-build restaurants designed with this in mind.</li>
+      <li><strong>Private dining rooms called chef's tables.</strong> A separate private room — sometimes with one-way glass into the kitchen, sometimes just a nice room — where the chef may or may not make a personal appearance. This is the most common usage and the most misleading. Many corporate event bookings fall into this category.</li>
+      <li><strong>Chef's counter experiences.</strong> Open kitchens with counter seating facing the cooking surface. Distinct from true omakase but structurally similar. Becoming a signature format at modernist restaurants: Atelier Crenn, the bar program at Benu, mini-sized counters at progressive fine dining spots.</li>
+    </ul>
+
+    <h3>How the Allocation Works</h3>
+
+    <p>The first thing to understand is that most chef's tables are never listed publicly. They don't appear on OpenTable, Resy, or the restaurant's standard booking page. They are allocated internally, by the maître d' or general manager, through channels that are entirely separate from the public reservation system.</p>
+
+    <p>This is by design. The kitchen table is a relationship asset — it is given to people the restaurant wants to cultivate, impress, or reward. Understanding the allocation hierarchy is the intelligence:</p>
+
+    <ul>
+      <li><strong>Hotel concierge relationships.</strong> The concierges at the Four Seasons, Mandarin Oriental, Rosewood, and similar properties in every city maintain direct phone relationships with the reservations managers at top restaurants. These relationships are built over years of mutual benefit: the concierge sends the restaurant good guests; the restaurant holds seats for the concierge's guests when nothing else is available. This is the single most reliable route to a kitchen table in any city.</li>
+      <li><strong>Return guests and known clients.</strong> Maître d's remember their regulars. If you have dined at the main dining room two or three times and been a good guest (more on that in the playbook), a direct inquiry for the chef's table will be received differently than one from a stranger.</li>
+      <li><strong>Press and PR.</strong> Food media, travel writers, and PR professionals working with chef groups have access that operates outside the normal reservation channel. If you have press credentials and a legitimate editorial reason, this pathway exists — but misrepresenting yourself closes doors permanently.</li>
+      <li><strong>Special occasions with notable guests.</strong> Milestone anniversaries, landmark birthdays, and events with a guest whose name or corporate affiliation matters to the restaurant (visiting dignitary, major account, known collector) can unlock access. The occasion must be real and articulable.</li>
+    </ul>
+
+    <p>Most chef's tables also carry a minimum spend — often $500 to $2,000 or more per person before wine — and may require a deposit against cancellation (these deposits can be substantial at tier-one venues). This is reasonable: the kitchen is dedicating significant resources to a small number of guests.</p>
+
+    <div class="pullquote">
+      <p>The reservation is not the goal. The reservation is the consequence of a relationship. Start building the relationship before you need the seat.</p>
+    </div>
+
+    <h3>Venue Profiles</h3>
+
+    <div class="venue-grid">
+
+      <!-- French Laundry -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">The French Laundry</span>
+            <span class="venue-location">Yountville, California</span>
+          </div>
+          <span class="venue-tier tier-hard">High Barrier</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">French-American haute cuisine — Kitchen table + dining room</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">62 dining room / 2–4 kitchen table</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">$400–500+ pp for standard menu; kitchen table pricing varies</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Tock — 60-day rolling drop, 10:00am Pacific</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">High barrier — direct inquiry for kitchen table; concierge recommended</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>The benchmark against which all American chef's tables are measured. Thomas Keller's kitchen at the French Laundry operates with a discipline that borders on ritual — each service runs the same way, the brigade executes the same brigade positions, and being at the kitchen table means watching this machinery from inside it. There is no menu handed to you; the kitchen decides what you eat.</p>
+          <p>The standard dining room is already extraordinarily difficult to book. The kitchen table is harder still and is not listed publicly under any circumstances. The two primary routes are: a concierge at a top Napa Valley property (Auberge du Soleil, Meadowood, or a Four Seasons concierge calling from out of city), or a direct call to the restaurant's dedicated guest services line — not the general reservation line — making an explicit inquiry about private kitchen arrangements well in advance.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Saturday dinner is the white whale and should be deprioritized unless you have a strong concierge relationship. Lunch on a Tuesday or Wednesday is meaningfully more accessible for the dining room, and the kitchen table is sometimes allocated during lunch service when the dining room is not at capacity. Set a Tock notification for the 60-day mark and refresh at precisely 10:00am Pacific on the release date for dining room seats. For the kitchen table specifically, call the restaurant directly during service prep (10–11am Pacific) and ask for the private dining or guest services coordinator.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Per Se -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Per Se</span>
+            <span class="venue-location">New York — Columbus Circle</span>
+          </div>
+          <span class="venue-tier tier-hard">High Barrier</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">New American tasting — Kitchen table + private salon</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">~60 dining room / 2–4 kitchen table</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">$350+ pp tasting menu; kitchen table above this</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Direct inquiry for kitchen table; dining room via Exploretock</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">Direct inquiry — hotel concierge recommended as first step</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>Keller's New York outpost occupies the Time Warner Center and commands views over Columbus Circle. The kitchen table — two to four guests, inside the kitchen — operates on the same philosophy as the French Laundry: no posted menu, no substitutions, the kitchen decides. The dining room also includes a private salon (the Blue Room) that functions as a chef's table in the PDR sense.</p>
+          <p>Per Se has had a complicated critical history over the past decade but remains at the very top tier of New York dining in terms of technical execution and ambition. The kitchen table experience is still one of the most singular meals available in the United States.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Do not use OpenTable for this inquiry. Call the restaurant directly and ask for the reservations manager — not the host who answers. The concierge at the Mandarin Oriental (same building) is among the most reliable pathways in New York for the kitchen table specifically, as they have a long-standing relationship with the Per Se team. Expect to inquire four to six weeks in advance minimum.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Le Bernardin -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Le Bernardin</span>
+            <span class="venue-location">New York — Midtown</span>
+          </div>
+          <span class="venue-tier tier-medium">Accessible by Direct Inquiry</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">French seafood haute cuisine — Working kitchen table</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">Up to 10 at the kitchen table</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">$250–350+ pp minimum; custom menus above this</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Direct inquiry to events/private dining coordinator</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">Accessible by inquiry — minimum 3–4 weeks</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>Opened by Gilbert Le Coze and his sister Maguy in 1986 and inherited by chef Éric Ripert after Gilbert's sudden death in 1994, Le Bernardin has held three Michelin stars continuously since the system expanded to New York in 2005 — the longest continuous streak in the city. The kitchen table here is larger than at most comparable restaurants (up to ten guests), making it genuinely useful for corporate events or larger celebrations while still being inside a working kitchen of significant calibration.</p>
+          <p>Ripert's kitchen produces some of the most technically refined seafood in the Western world. Being in that kitchen during service — watching the brigade execute their precise, un-fussy plating of fish that has been treated with the reverence most kitchens reserve for beef — is a tutorial in simplicity as discipline. The kitchen table here is also among the most actively booked for corporate entertainment by finance and law firms, which means it is used to hosting non-food-world guests without condescension.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Le Bernardin has a dedicated private dining team and the inquiry process is more systematized than at some peers — this makes it, paradoxically, more accessible if you know to contact the right department. Call during service prep and ask for the private dining or events coordinator specifically. Come with a group size, approximate date, and occasion. They are accustomed to corporate inquiries and will respond quickly. This is the most approachable true kitchen table of this tier in New York.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Restaurant Daniel -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Restaurant Daniel</span>
+            <span class="venue-location">New York — Upper East Side</span>
+          </div>
+          <span class="venue-tier tier-medium">Accessible by Direct Inquiry</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Contemporary French — Kitchen table + private rooms</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">2–8 kitchen table; private rooms up to 40</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">$250–400 pp tasting; kitchen table custom</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Direct call — 4–6 weeks advance recommended</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">Most accessible true kitchen table of this tier in NYC</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>Daniel Boulud opened Restaurant Daniel in 1993 after his years at Le Cirque, where he essentially invented the modern American chef's table concept. This is the original. The kitchen table at Daniel seats two to eight and has been hosting notable guests — culinary royalty, heads of state, celebrities — for over thirty years. The space has the particular atmosphere of a room where important things have happened.</p>
+          <p>Daniel Boulud's operation is large (he runs multiple restaurants) and professionalized, which works in the prospective guest's favor: the kitchen table inquiry process at Daniel is more codified than at restaurants run by a single chef on a smaller scale. There is staff dedicated to handling it.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Call the restaurant directly and ask for the reservations manager or private dining coordinator. This is the most accessible true kitchen table at this tier in New York — four to six weeks advance notice is typically sufficient for a non-peak date if you approach correctly. The restaurant is accustomed to hosting guests who are serious about dining but not necessarily food-world insiders. Bring an occasion and a group size.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jônt / Bresca - DC -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Jônt</span>
+            <span class="venue-location">Washington DC — 14th Street NW</span>
+          </div>
+          <span class="venue-tier tier-hard">High Competition</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Japanese-influenced progressive tasting — Counter + chef's table</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">12 counter seats</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">$325–400+ pp before beverage (verify current pricing)</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Resy — 30-day rolling drop</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">High competition — Resy Notify essential; direct inquiry for private arrangements</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>Chef Ryan Ratino's Jônt — situated above his more casual Bresca on 14th Street — is the closest thing Washington has to a true omakase counter experience at the fine dining level. A twelve-course Japanese-influenced progression, twelve counter seats, one seating per evening. Ratino has received significant national attention and the restaurant was named to multiple "best in the US" lists since opening. For DC residents, this is the kitchen-counter experience closest to hand.</p>
+          <p>Bresca, downstairs, offers a more accessible entry point: the counter seating at Bresca facing the open kitchen gives a version of the same access dynamic at a lower price point, and being a regular at Bresca is a reasonable pathway to building the relationship that unlocks the Jônt experience.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Enable Resy Notify immediately and check at the 30-day mark. Tuesday and Wednesday evenings are meaningfully easier to book than weekend slots. If you want to pursue a private arrangement or special occasion seating, contact the restaurant directly during prep hours — they are a small, chef-owned operation and decisions get made quickly.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end venue-grid -->
+  </section>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SECTION II: OMAKASE                                 -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <section class="section" id="omakase">
+    <div class="section-header">
+      <span class="section-number">Section II</span>
+      <h2>The Omakase Counter<br><em>Philosophy, Format & Access</em></h2>
+      <p class="section-deck">A 19th-century Edo sushi tradition that became the dominant format of elite counter dining globally — and the most informationally gated reservation category in existence.</p>
+    </div>
+
+    <h3>Etymology and Origins</h3>
+
+    <p>Omakase (お任せ) derives from the Japanese verb <em>makaseru</em> (任せる), meaning to entrust or to leave in someone's care. The full phrase is <em>omakase shimasu</em> — "I entrust it to you" — and the implication is total: you are giving the chef control over what you eat, when you eat it, and how much of it you receive. This is not merely a dining preference. It is a statement of trust and, at the highest levels, an acknowledgment that the chef's judgment exceeds your own.</p>
+
+    <p>The concept has roots in Edo-period Tokyo (then called Edo), in the culture of the <em>sushiya</em> — the sushi shop. As Tokyo's sushi culture became sophisticated in the early-to-mid 19th century, a distinction emerged between customers who ordered from a menu and customers who walked in, sat at the counter, and told the <em>itamae</em> (the chef behind the counter — literally "in front of the board") to simply make whatever was best that day. The latter were almost always regulars: people who had a relationship with the chef, trusted his sourcing, and didn't need the mediation of a written menu. The word omakase formalized this trust relationship.</p>
+
+    <p>The formalization of omakase as a distinct premium dining category happened in post-war Japan, particularly in Tokyo's Ginza district, where a class of business executives created demand for counter-dining experiences of significant refinement. The name most associated with the apex of this tradition is Jiro Ono, who ran Sukiyabashi Jiro Honten — three Michelin stars, ten seats, in a basement of the Tsukamoto Sogyo Building in Ginza — for decades, and whose operation was made globally famous by David Gelb's 2011 documentary <em>Jiro Dreams of Sushi</em>. (Note: Jiro retired from front-of-house duties in 2023 at age 97; his son Yoshikazu now runs the restaurant.)</p>
+
+    <p>The format spread globally beginning in the early 2000s, driven by Japanese chefs establishing themselves in New York and Los Angeles, and accelerated through the 2010s as American and European chefs adopted the counter format for non-Japanese cuisine — recognizing that the architecture of the counter experience (controlled pacing, direct chef–guest communication, no à la carte decision-making) was superior for certain kinds of ambitious tasting cuisine.</p>
+
+    <h3>The Counter as Architecture</h3>
+
+    <p>Understanding the physical design of the counter is not pedantic — it explains why the experience is categorically different from table dining, and it explains the behavioral norms that govern it.</p>
+
+    <p>The traditional omakase counter is built of <em>hinoki</em> — Japanese cypress. This is not an aesthetic preference. Hinoki has specific properties: it is light in color (creating visual neutrality against which the colors of fish are legible), has a mild, clean scent that does not interfere with smell-perception of the food, and develops a natural patina over years of use. The surface of a well-worn hinoki counter has a history encoded in it. Running your hand along it is reading a record of previous meals.</p>
+
+    <p>The eight-to-twelve seat format is also deliberate. It is the maximum number of guests a single itamae can serve while maintaining personal attention and precise quality control over each piece. Beyond twelve, a second chef is required — and the introduction of a second chef changes the experience fundamentally, from a singular conversation to a broadcast. The best counters in the world seat eight to twelve because this is the number that allows the meal to remain intimate.</p>
+
+    <p>The counter collapses the distance between production and consumption. At a table, the kitchen is a mystery — food arrives through a door. At a counter, you watch your food be made, from the drawing of the knife to the final brush of nikiri across the nigiri. This proximity is both the pleasure and the demand of the format: you are expected to be present for it.</p>
+
+    <h3>Format Variations</h3>
+
+    <ul>
+      <li><strong>Edomae sushi omakase.</strong> Traditional Tokyo-style sushi. Characterized by aged and cured fish (marinating, vinegar-curing, and various preservation techniques developed in the era before refrigeration), seasoned rice prepared with specific rice vinegar, and precise two-bite nigiri. The quality ceiling in this format is defined by the fish — specifically by access to Toyosu Market in Tokyo, from which the best itamae source tuna, sea urchin, and other key ingredients. Most high-end NYC counter sushi falls in this category.</li>
+      <li><strong>Kaiseki omakase.</strong> A distinct discipline — multi-course traditional Japanese seasonal cuisine, not sushi. The kaiseki tradition originated in Kyoto, linked to the tea ceremony, and is organized around seasonal ingredients presented in a prescribed sequence: sakizuke (amuse), hassun (seasonal platter), yakimono (grilled course), shokuji (rice, miso, pickles). Kaiseki counters require different behavioral knowledge than sushi counters.</li>
+      <li><strong>Modern/hybrid omakase.</strong> Non-Japanese chefs adopting the counter format for progressive cuisine. This includes some of the most interesting dining in DC and London — where the counter format is being applied to European and fusion approaches. The omakase structure (chef-controlled menu, fixed seating, counter service) translates across cuisines.</li>
+      <li><strong>Kappo.</strong> A more relaxed counter format rooted in Japanese culinary tradition — technically more elaborate than sushi (kappo chefs prepare multiple cooking styles) but more casual in atmosphere than formal kaiseki. Popular in DC and increasingly in London.</li>
+    </ul>
+
+    <h3>The Booking Mechanics</h3>
+
+    <p>This is the most operationally specific section of this brief, and the most actionable.</p>
+
+    <h4>The 60-Day Rule and Its Variations</h4>
+
+    <p>Most high-demand counters operate on a rolling release window: a new date becomes bookable a fixed number of days in advance, typically 30 or 60 days from the date of the meal. The practical implication: you must know, per venue, exactly which day new dates drop and at what time. For Tock-based venues, releases typically occur at a specific time (often 10:00am in the restaurant's local time zone). For Resy-based venues, releases often occur at midnight on the release date. Being thirty seconds late is often being too late.</p>
+
+    <p>Specific release windows by booking platform:</p>
+    <ul>
+      <li><strong>Tock.</strong> Used by French Laundry, Minibar, Alinea, and others. Drops tend to occur at 10:00am local time, 60 days out. Set a phone alarm. Have your card saved. The confirmation process takes approximately ninety seconds of uninterrupted attention.</li>
+      <li><strong>Resy.</strong> Used by Sushi Nakazawa, Jônt, many NYC counters. Drops tend to occur at midnight (12:00–12:01am), 28–30 days out. Resy Notify is a push notification that alerts you when a seat becomes available — enable this for any restaurant where you want to attend and check manually at midnight on the drop date regardless.</li>
+      <li><strong>Proprietary / Direct.</strong> Many London counters and some NYC counters (Sushi Noz, Masa) operate on their own systems, require direct booking via phone or email, or use a waitlist managed by the restaurant. These require the most direct engagement.</li>
+    </ul>
+
+    <h4>Cancellation Windows</h4>
+
+    <p>Cancellations at overbooked counters follow predictable patterns. Checking at these windows is more productive than random monitoring:</p>
+    <ul>
+      <li><strong>Monday morning, 9–10am.</strong> People review their calendars for the coming two to four weeks and cancel commitments that no longer work. This generates Monday-morning cancellations across all booking platforms.</li>
+      <li><strong>Three to four weeks before the date.</strong> When conflicting plans solidify (travel, conferences, family events), bookings made weeks earlier get released.</li>
+      <li><strong>Two to three days before the date.</strong> Last-minute life changes — illness, work emergencies — create final-week drops. These are often the easiest to secure because they appear with short notice and require flexibility.</li>
+    </ul>
+
+    <h4>Off-Peak Strategy</h4>
+
+    <p>Tuesday and Wednesday evening counter seats are released along with weekend slots but are significantly less contested. The experience is not meaningfully different from a Friday Saturday — and the itamae is often more relaxed, more communicative, and more willing to extend the meal. Lunch omakase, where it is offered (Masa offers lunch; some counters offer abbreviated lunch seatings), is dramatically more accessible and frequently produces a better experience for the simple reason that daytime service has a different energy. This is counterintuitive but widely confirmed by serious omakase diners.</p>
+
+    <h4>The Direct Inquiry</h4>
+
+    <p>For counters that are reliably impossible on public booking platforms, the direct call remains the most underused tool. Call during service prep (10:00–11:30am or 3:00–4:30pm). Ask for the reservations manager. State that you are visiting the city for a specific brief window, are fully flexible within that window, and ask whether there are any cancellations or whether you might be placed on a waitlist. Being specific — "I'm in New York from the 14th through the 17th, is there any opening at any of those dinners?" — is far more productive than "do you have anything coming up?"</p>
+
+    <h4>The Secondary Market</h4>
+
+    <p>Appointment Trader is the primary legitimate secondary-market platform for restaurant reservations in the United States. Reservation holders list their bookings; buyers pay a fee (varying by venue, can range from $20 to several hundred dollars) for the transfer. This is legal and has become common enough that it no longer carries significant stigma. Two practical notes: the itamae at a counter where you are a new face may remember that you are new — this is fine as long as your behavior once seated is correct. And verify the listing carefully before paying; Appointment Trader has some fraud risk.</p>
+
+    <h4>The Hotel Concierge</h4>
+
+    <p>At high-end hotels in all three cities — Four Seasons, Mandarin Oriental, Rosewood, Raffles, Peninsula — the concierge team maintains direct relationships with the reservations managers and maître d's at top restaurants. These relationships are built on years of mutual referrals and are actively maintained. Calling or visiting the concierge desk as a hotel guest and asking them to make inquiries on your behalf is often more effective than any direct approach. This is especially true in London, where the concierge ecosystem is deeply embedded in the hospitality culture.</p>
+
+    <div class="city-header">
+      <span class="city-name">New York</span>
+      <div class="city-rule"></div>
+    </div>
+
+    <div class="venue-grid">
+
+      <!-- Masa -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Masa</span>
+            <span class="venue-location">New York — Columbus Circle, Time Warner Center</span>
+          </div>
+          <span class="venue-tier tier-hard">Very High Barrier</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Edomae sushi omakase — Three Michelin stars</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">~26 (counter + tables) — counter seats preferred</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">$1,000+ pp before beverages, tax, and gratuity (highest in US)</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Masa's own website — not Resy or Tock; rolling availability</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">High barrier — direct booking or Mandarin concierge (same building)</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>Chef Masayoshi Takayama's eponymous restaurant is the most expensive restaurant in the United States by per-person check average and has been for years. The hinoki counter is sourced from the same cypress used in Japanese shrine construction. Fish is sourced directly from Toyosu Market in Tokyo — specifically selected cuts air-freighted to New York — along with seasonal Japanese ingredients unavailable in domestic US markets. The toro (fatty tuna belly) served here is the reference point against which all toro in the United States is correctly measured.</p>
+          <p>The experience runs approximately two to three hours, twenty-plus courses, and requires a dress code (no sneakers, no shorts, no exposed athletic wear). Substitutions are not made. Dietary restrictions must be disclosed during booking; the kitchen accommodates severe allergies but the omakase format does not accommodate preferences.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>The Mandarin Oriental concierge in the same building at Columbus Circle is the single most reliable access pathway and should be the first call. Masa's own booking website opens availability on a rolling basis — check it directly at varied intervals, as there is no clean 60-day rule and cancellations appear unpredictably. Counter seats are more coveted than table seats; specify your preference. Lunch seating exists and is more accessible than dinner while being a meaningfully lower price point. This is not a venue to approach through Appointment Trader — the itamae at Masa knows their regulars.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sushi Nakazawa -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Sushi Nakazawa</span>
+            <span class="venue-location">New York — West Village</span>
+          </div>
+          <span class="venue-tier tier-medium">Accessible — High Speed Required</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Edomae sushi omakase — One Michelin star</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">10 sushi bar counter / 12 dining room</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">$175–250 pp omakase before beverage</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Resy — 30-day rolling drop, 12:00–12:01am</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">Open but high-speed booking required; counter > dining room</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>Chef Daisuke Nakazawa trained directly under Jiro Ono at Sukiyabashi Jiro in Tokyo — his years of apprenticeship, including the obsessive egg preparation that is the centerpiece of the documentary, made him arguably the best-known sushi apprenticeship story in the world. He opened in the West Village in 2013 and the restaurant has been consistently oversubscribed since. Twenty-one pieces of nigiri, no substitutions, pacing controlled by the chef. The egg — a tamago that takes Nakazawa over a decade to master in Jiro's kitchen — is typically the final savory piece before dessert, and it remains excellent.</p>
+          <p>The sushi bar counter is categorically better than the dining room: you watch Nakazawa or his lead itamae work directly, and the pieces come to you the moment they are prepared. Dining room service involves plating and timing delays that counter service avoids. Always specify the sushi bar when booking.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Enable Resy Notify. Set a phone alarm for 11:58pm on the day 30 days before your target date. Have the Resy app open and your card saved. The counter slots go in under sixty seconds. If you miss the drop, check Monday mornings at 9am and again two to three days before any specific date for cancellations. Tuesday and Wednesday counter seats are meaningfully more available than weekend slots. This is the most accessible true Edomae omakase in New York at the price point — do not let the difficulty deter you; the system is gameable with attention.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sushi Noz -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Sushi Noz</span>
+            <span class="venue-location">New York — Upper East Side</span>
+          </div>
+          <span class="venue-tier tier-hard">High Barrier</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Edomae sushi omakase — One Michelin star</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">8 counter seats only</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">$400–500 pp before beverage (verify current pricing)</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Proprietary system (not Resy or Tock) — direct inquiry</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">High barrier — direct contact required; relationship-building helps</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>Chef Nozomu Abe's eight-seat counter on the Upper East Side is, by multiple serious measures, the best traditional Edomae omakase in New York below Masa. The space is a considered design — warm wood, clean lines, an atmosphere that reads as a serious Japanese counter without any of the generic "upscale sushi restaurant" aesthetic. Abe's sourcing includes materials from Toyosu and his aging and preparation techniques are among the most technically demanding in the city.</p>
+          <p>Eight seats means eight guests per seating. The counter is small enough that the itamae knows who is sitting in front of them and remembers who has been there before. This is a venue where becoming a returning guest materially changes the experience.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Sushi Noz does not use a major public booking platform. Reservation inquiries go through their own system — check their current website for the method, as it has varied. Appointment Trader occasionally lists seats here; this is among the more legitimate uses of that platform because it is genuinely otherwise inaccessible. The hotel concierge route is also effective — several Upper East Side luxury properties maintain relationships here. On repeat visits, introduce yourself to the counter team and express your intention to return. This conversation is the beginning of the relationship that unlocks the counter.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end NYC venues -->
+
+    <div class="city-header">
+      <span class="city-name">Washington, DC</span>
+      <div class="city-rule"></div>
+    </div>
+
+    <div class="venue-grid">
+
+      <!-- Minibar -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Minibar by José Andrés</span>
+            <span class="venue-location">Washington, DC — Penn Quarter</span>
+          </div>
+          <span class="venue-tier tier-medium">Accessible — High Speed Required</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Avant-garde tasting counter — Two Michelin stars</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">~12 counter seats, two seatings per evening</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">$275–330+ pp before beverage (verify current pricing)</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Tock — 60-day rolling drop, 10:00am Eastern</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">Timed release — manageable with preparation</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>José Andrés's Minibar is Washington's most technically ambitious restaurant and has held two Michelin stars continuously since the guide's DC debut. The format is a counter experience — guests sit facing the open kitchen and watch the progression of a 20-plus course avant-garde tasting menu that draws on Andrés's training with Ferran Adrià at El Bulli. The food is modernist in the specific sense: liquid nitrogen, spherification, flavors abstracted and reassembled in unexpected forms. This is not a restaurant for guests who want to be comfortable; it is a restaurant for guests who want to be surprised.</p>
+          <p>Two Michelin stars in DC is a meaningful distinction — there are very few of them. As DC's premier counter tasting experience, Minibar is also DC's most demanding reservation. The 60-day Tock drop is your primary pathway.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Set a Tock notification and have an alarm for 9:58am Eastern on your target release date. Have your party confirmed and your card saved. The second seating (typically around 8:30–9pm) is slightly less contested than the first. The bar counter facing the kitchen — request this specifically — is the optimal position. Chef Andrés is occasionally in the restaurant but not always executing at the counter; the team is uniformly excellent regardless.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sushi Ogawa -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Sushi Ogawa</span>
+            <span class="venue-location">Washington, DC — Downtown</span>
+          </div>
+          <span class="venue-tier tier-medium">Accessible — Nationally Underrated</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Traditional Edomae sushi omakase</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">Small counter format — verify current capacity</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">$175–250+ pp before beverage (verify)</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Direct call / proprietary system — not a major platform</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">Accessible relative to national peers — less nationally known</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>Sushi Ogawa operates below the radar of most national food media, which is simultaneously its limitation and its advantage. Chef Ogawa's sourcing and technique represent serious traditional Edomae practice in a city not known for it. For DC residents who want a genuine counter sushi experience without the operational ordeal of competing for a Nakazawa or Noz seat in New York, this is the best available option in the immediate region.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Call directly; verify their current booking method as it has evolved over time. The relative accessibility of this counter compared to NYC peers is a feature, not a flaw in the product. Treat the counter staff with the same attentiveness you would at Masa — the chef knows who is paying attention and who is not.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end DC venues -->
+
+    <div class="city-header">
+      <span class="city-name">London</span>
+      <div class="city-rule"></div>
+    </div>
+
+    <div class="venue-grid">
+
+      <!-- Sushi Tetsu -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Sushi Tetsu</span>
+            <span class="venue-location">London — Clerkenwell, EC1</span>
+          </div>
+          <span class="venue-tier tier-hard">Extreme — Phone-In Only</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Traditional Japanese sushi counter — One Michelin star</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">7 seats only</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">£150–220+ pp (verify current pricing)</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Phone only — reservations released on specific days at 8:00am</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">One of the hardest reservations in London — requires phone dialing at opening</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>Sushi Tetsu is seven seats in a small room in Clerkenwell and is consistently cited among the three or four hardest restaurant reservations in the United Kingdom. Chef Tetsuhiro Hiyama trained in Japan for years before opening in London and brought a discipline and sourcing ethic that has made the restaurant a reference point for Japanese counter dining in Europe. The operation does not use any online booking platform. Reservations are released by phone on specific days of the week (the schedule changes — verify the current practice before calling), at 8:00am. On release day, the phone is busy. You keep calling.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Research the current release day and time before your London visit — this changes periodically and is the subject of active discussion in London food communities (Eater London, Hot Dinners, social media). Set an alarm. Have the number on autodial. Be patient; the call volume on release mornings is significant but the line clears within the first hour. This is among the highest-effort reservations in this brief, and the experience justifies it. Hotel concierges in Clerkenwell-adjacent properties (The Ned, Andaz Liverpool Street) occasionally have relationships that short-circuit the phone queue — always worth asking.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Endo at the Rotunda -->
+      <div class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-card-header-left">
+            <span class="venue-label">── Venue Profile ──</span>
+            <span class="venue-name">Endo at the Rotunda</span>
+            <span class="venue-location">London — White City, W12</span>
+          </div>
+          <span class="venue-tier tier-medium">High Competition — Manageable</span>
+        </div>
+        <div class="venue-meta">
+          <div class="meta-row">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Contemporary sushi / Japanese counter — Two Michelin stars</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Seats</span>
+            <span class="meta-value">8 counter + tables</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Price</span>
+            <span class="meta-value">£275–350+ pp before beverage</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Booking</span>
+            <span class="meta-value">Direct booking via their website; availability varies</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Access</span>
+            <span class="meta-value">High competition but not as extreme as Tetsu</span>
+          </div>
+        </div>
+        <div class="venue-intel">
+          <p>Chef Endo Kazutoshi — formerly of Zuma — built Endo at the Rotunda atop a brutalist concrete car park in White City, which is itself a statement: the contrast between the brutalist exterior and the refined hinoki counter within is intentional and reads, in person, as quietly extraordinary. The restaurant earned two Michelin stars and produces a version of modern Japanese counter cooking that is distinctly London in its cultural references while being rigorous in its Japanese technique.</p>
+          <p>The location in White City, slightly removed from the central London dining circuit, works in your favor — the commute filters out casual bookers. Guests who make the journey tend to be serious, which affects the room's atmosphere positively.</p>
+          <div class="access-box">
+            <div class="access-box-label">Access Intelligence</div>
+            <p>Book directly through the restaurant's website. Cancellation checks on Monday mornings and two to three days before the date are productive. The counter seats specifically are worth requesting when booking — the tables are fine but the counter is the point.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end London venues -->
+  </section>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SECTION III: SUPPER CLUBS & UNDERGROUND             -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <section class="section" id="underground">
+    <div class="section-header">
+      <span class="section-number">Section III</span>
+      <h2>Supper Clubs &amp; <br><em>the Underground Circuit</em></h2>
+      <p class="section-deck">The most information-asymmetric category in this brief. The knowledge itself is the barrier. These rooms exist because they are deliberately hard to find.</p>
+    </div>
+
+    <h3>Two Traditions, Often Confused</h3>
+
+    <p>The term "supper club" describes two entirely different things depending on who is using it, and conflating them produces confusion.</p>
+
+    <p>The <strong>American supper club tradition</strong> is a Midwestern invention — specifically a Wisconsin and Upper Midwest institution dating from the 1930s and 1940s. The Wisconsin supper club is a specific and still-living format: a combined social club, cocktail lounge, and dining room, typically occupying a freestanding building near a lake or on a rural highway, serving brandy Old Fashioneds, Friday fish fry, and prime rib to a community-oriented clientele. These institutions — places like Schwarz's Supper Club in Slinger, or Ishnala Supper Club in Wisconsin Dells — are not difficult to access (they are often quite accessible) and are genuinely worth knowing about on their own terms, but they are a separate phenomenon from the underground dining movement.</p>
+
+    <p>The <strong>modern underground dining movement</strong> emerged in the early 2000s as a reaction to the overhead structure of licensed restaurants. Chefs who wanted to cook ambitiously, without the capital requirements of a restaurant buildout or the regulatory demands of a licensed space, began hosting private dinner parties that blurred the line between invitation-only meal and ticketed event. The format was typically: a private home or unlicensed space, a set menu, a fixed price collected in advance (often by PayPal or cash), a small group of guests recruited through word of mouth or a mailing list.</p>
+
+    <p>In the United Kingdom, this movement was formalized — and given its defining text — by Kerstin Rodgers (who writes as MsMarmiteLover), who began hosting underground suppers in her Kilburn home around 2007–2009 and published <em>Supper Club: Recipes and Notes from the Underground Restaurant</em> in 2011. That book created a template and a vocabulary for the genre, and London's underground dining scene in the years following it was the most active in the English-speaking world.</p>
+
+    <p>The modern pop-up and supper club format has evolved considerably since. Some pop-ups have become restaurants (Contra in New York; Brat in London). Some supper clubs have become permanent but membership-based. Some remain deliberately informal. The format adapts to its context.</p>
+
+    <h3>How These Circuits Are Accessed</h3>
+
+    <div class="method-list">
+      <div class="method-item">
+        <span class="method-num">01</span>
+        <span class="method-text"><strong>Mailing lists.</strong> This is the primary channel for most legitimate underground operations. Many supper clubs and pop-up series have no public social media presence — or have social media accounts that post nothing of substance — and communicate exclusively with a mailing list of known guests. Finding the mailing list is the access problem. The ways in: being referred by someone already on the list, contacting the organizer directly after discovering their existence through food media, or attending a semi-public event where you can make the connection personally.</span>
+      </div>
+      <div class="method-item">
+        <span class="method-num">02</span>
+        <span class="method-text"><strong>Food media relationships.</strong> Writers, editors, and photographers at food publications — Eater, Bon Appétit, local alt-weeklies, city magazines — know about these circuits because they are invited to them. Being in the food media world, or knowing people who are, is a genuine structural advantage. The ask is simple and rarely refused in the right context: "I'm trying to find interesting off-menu dining experiences in [city] — do you know anything worth pursuing?"</span>
+      </div>
+      <div class="method-item">
+        <span class="method-num">03</span>
+        <span class="method-text"><strong>Chef and line cook networks.</strong> Line cooks, sous chefs, and prep staff at top restaurants are the organizing infrastructure of most underground dining events. They run pop-ups on their days off. They know whose supper club is happening next month. A genuine conversation with kitchen staff — not networking, just talking — at an accessible wine bar or casual restaurant in the restaurant district often opens more doors than any formal strategy.</span>
+      </div>
+      <div class="method-item">
+        <span class="method-num">04</span>
+        <span class="method-text"><strong>Instagram accounts that announce nothing.</strong> Many underground operations maintain Instagram accounts with minimal or cryptic posts — occasional food photography, no location tags, no event announcements visible to the public. What they do is DM followers when events are happening. Following these accounts and engaging with them (commenting substantively, not just liking) puts you in the group that receives those DMs. Identifying these accounts requires knowing to look for them; food media mentions and comment sections of food photography accounts are good discovery mechanisms.</span>
+      </div>
+      <div class="method-item">
+        <span class="method-num">05</span>
+        <span class="method-text"><strong>Community booking platforms.</strong> Tock hosts some pop-ups and ticketed events. Eventbrite, despite its generic reputation, carries serious culinary events. Airbnb Experiences has a food category with enormous quality variance — buried within it are occasionally exceptional offerings run by legitimate chefs. The work is filtering. Resident.co and similar platforms aggregate some of these events in specific cities.</span>
+      </div>
+      <div class="method-item">
+        <span class="method-num">06</span>
+        <span class="method-text"><strong>The direct ask.</strong> Underrated in proportion to how often it works. In the right social context — a dinner party, a conversation at a good bar, talking to someone you've identified as food-world adjacent — simply saying "I'm always looking for interesting dining experiences that aren't on the normal circuit, do you know of anything?" surfaces more invitations than most people expect. People who are involved in these circles are usually proud of them and want to share them with guests who will appreciate them.</span>
+      </div>
+    </div>
+
+    <div class="city-header">
+      <span class="city-name">New York</span>
+      <div class="city-rule"></div>
+    </div>
+
+    <p>New York's underground dining circuit is older, larger, and more documented than those in DC or London, but it is also more transient — pop-ups appear and disappear on timescales of months. The most stable circuit runs through Brooklyn, specifically through chef communities in Bushwick, Williamsburg, and Crown Heights.</p>
+
+    <p>The <strong>Bronx and Queens community supper club circuits</strong> deserve specific mention. Informal dinner series run by first- and second-generation immigrant cooks in these boroughs — serving serious West African, South Asian, Mexican, and Caribbean cuisines in home settings — represent some of the most extraordinary cooking available in New York. These are not "underground dining" in the pop-up sense; they are traditional community cooking that happens to be operating informally. Access is genuinely community-gated: you need an introduction. But for those who are willing to build those relationships (through neighborhood community organizations, cultural associations, food co-ops), the experiences available are not replicable anywhere in the formal dining world at any price.</p>
+
+    <p>The more accessible pop-up circuit runs through food event aggregators: Resident.co, The Infatuation's event listings, Tock's event section, and Eventbrite. Look specifically for "chef's pop-up," "underground dinner," "collaborative dinner," and the names of chefs you recognize from restaurant credits. Dinner Lab, which formalized ticketed underground dining nationally in the 2010s, has had various iterations; check its current status.</p>
+
+    <div class="city-header">
+      <span class="city-name">Washington, DC</span>
+      <div class="city-rule"></div>
+    </div>
+
+    <p>DC's circuit is smaller and more private than New York's, and more explicitly social in structure — it runs through overlapping circles of food media, diplomatic community, and policy world professionals. Several features of DC's underground dining scene are particular to the city:</p>
+
+    <p>The <strong>embassy and diplomatic circuit</strong> is uniquely DC. Foreign cultural attachés at embassies throughout the city host dining events for press, policy, and cultural figures on a regular basis — events featuring food, wine, and spirits from their home countries, often prepared by visiting chefs or embassy kitchen staff of genuine quality. These events are technically private (invitation-only) but are considerably more accessible than they appear: embassies actively want to develop their cultural programming audience. The pathway is to contact embassy cultural offices directly, expressing interest in culinary programming, or to follow embassy social accounts, which often announce public-facing versions of these events. The right contact at a dozen embassies — Brazilian, Italian, Japanese, French, Spanish, Korean — is a genuine asset for someone building a DC dining life.</p>
+
+    <p><strong>Chef pop-ups at wine bars</strong> are DC's most active format. The wine bar circuit — Primrose in Brookland, La Jambe on 14th Street, Tail Up Goat in Adams Morgan, Columbia Room for cocktail-paired events — regularly hosts visiting and resident chefs for one-night events. These are typically announced on Instagram a week to ten days in advance, sell through Eventbrite or Tock, and sell out quickly to the mailing list before the public announcement goes out. Following these venues on Instagram and, more importantly, finding out how to get on their event mailing lists, is the primary access mechanism.</p>
+
+    <p>The <strong>Eater DC and Washington City Paper food coverage</strong> regularly documents these events — reading those publications' event sections and social accounts is a reliable early-warning system for the city's pop-up circuit.</p>
+
+    <div class="city-header">
+      <span class="city-name">London</span>
+      <div class="city-rule"></div>
+    </div>
+
+    <p>London's underground dining circuit was defined in the 2009–2015 period by a cohort of cooks and food writers who created an explicitly alternative model to the restaurant industry — more intimate, more informal, more directly connected between cook and guest. Several of those original operations remain active.</p>
+
+    <p><strong>MsMarmiteLover's Underground Restaurant</strong> in Kilburn, run by Kerstin Rodgers, is the original and longest-running operation of this kind in the UK. Rodgers has been hosting dinners in her home for fifteen-plus years, with themes ranging across global cuisines, specific seasonal concepts, and collaborative events with other cooks. She is the person who wrote the book — literally — on this format. Access is through her website and mailing list. This is an accessible and entirely legitimate starting point for someone new to the London underground dining circuit.</p>
+
+    <p><strong>The Loft Project</strong> is a supper club collective that has been running in various London locations since around 2010. Events are announced through their mailing list and social accounts — more semi-public than fully private, but not advertised in conventional media. Quality varies by event but the collective curates participating chefs carefully.</p>
+
+    <p><strong>Carousel</strong> in Marylebone is not underground but functions as the most accessible entry point into London's visiting-chef circuit. The restaurant runs a residency model — visiting international chefs take over the kitchen for weeks at a time, cooking their own cuisine in London for an audience that would otherwise have to travel to experience it. Carousel's programming is publicly announced and bookable; it has hosted chefs from across Europe, Japan, and beyond. Being a Carousel regular means regular access to international talent before they have London profiles.</p>
+
+    <p><strong>Brat</strong> in Shoreditch, run by Tomos Parry (one Michelin star), occasionally organizes private events and collaborative dinners that sit outside the normal dining room operation. Following Brat's social accounts and having a relationship with the restaurant through normal service is the pathway to those events.</p>
+
+    <p><strong>Noble Rot</strong> — both the wine bar/restaurant in Soho and the wine magazine of the same name — runs members events with a culinary and wine-focused programming calendar. Subscribing to the magazine and engaging with the community it has built is a genuine pathway to these events.</p>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SECTION IV: MEMBERS' CLUBS                          -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <section class="section" id="clubs">
+    <div class="section-header">
+      <span class="section-number">Section IV</span>
+      <h2>Members' Clubs<br><em>with Serious Dining Arms</em></h2>
+      <p class="section-deck">The private club dining model is distinct from restaurant dining in a structural sense: the kitchen exists to serve the membership, not to compete for external press. Understanding this changes how you evaluate and access these rooms.</p>
+    </div>
+
+    <h3>The Club Dining Model</h3>
+
+    <p>Private members' clubs have housed serious kitchens since the 19th-century London club culture that gave us the Reform Club (where Alexis Soyer, arguably the first celebrity chef, ran the kitchen from 1837 to 1850 and cooked for eight thousand guests at a single party for the Duke of Wellington). The model was always the same: a kitchen whose job is to be excellent for a specific, known audience, without the pressures of public criticism, without the need to fill seats, and without the economic panic that drives restaurant kitchens toward efficiency over craft.</p>
+
+    <p>The result, in the best clubs, is a dining room that operates with a level of consistency that few public restaurants can match — because the kitchen is not spending energy on a hundred covers a night for strangers; it is cooking for members who will be back next week. Regularity breeds intimacy in both directions. The kitchen knows what the members want. The members know what the kitchen can do.</p>
+
+    <p>Access to club dining rooms requires either membership, a guest invitation from a member, or — in some cases — finding that the club's restaurant has a semi-public access mechanism (a few London clubs allow non-members to dine in specific rooms with restrictions).</p>
+
+    <div class="city-header">
+      <span class="city-name">New York</span>
+      <div class="city-rule"></div>
+    </div>
+
+    <p><strong>Core Club</strong> (57th Street) is the apex of New York's private club scene — a membership requiring a reported $100,000 initiation fee and annual dues of similar magnitude, an acceptance process that includes member sponsorship and board review, and a dining room that operates at the level of a serious four-star establishment without the public-facing pressure. Access without membership is functionally impossible without a member host who is willing to sponsor a guest dinner. If you have a professional relationship with someone at this level, the ask — carefully made — is appropriate.</p>
+
+    <p><strong>Casa Cipriani</strong> in the Battery Maritime Building is significantly more accessible — annual membership in the $3,500–$5,000 range, with a waitlist that clears within a reasonable timeframe for applicants with the right profile. The Cipriani family's kitchen is serious: Harry's Bar in Venice is the original; the Cipriani culinary vocabulary (carpaccio, bellini, risottos of restrained excellence) translates authentically here. The building itself — the restored Battery Maritime Building on the East River — is architecturally extraordinary. For someone building a New York private dining life, Casa Cipriani membership is the most value-efficient entry point at this tier.</p>
+
+    <p><strong>Zero Bond</strong> in Noho operates at a creative-industry and media membership base — the application is socially filtered toward artists, editors, architects, founders, and adjacent professionals. Annual dues are roughly $3,000. The dining quality is genuine and the programming (visiting chefs, wine events, collaborative dinners) is regularly interesting. The membership profile means the room is full of people who take food seriously, which improves the experience of dining there.</p>
+
+    <p><strong>Norwood Club</strong> in Chelsea is London-influenced in its arts-and-culture orientation, with reasonable annual membership and a dining room of consistent quality. A good entry-level private club for someone establishing New York connections in the arts and media world.</p>
+
+    <div class="city-header">
+      <span class="city-name">London</span>
+      <div class="city-rule"></div>
+    </div>
+
+    <p><strong>5 Hertford Street</strong> in Mayfair — specifically Harry's Bar and Loulou's in the basement — is, by almost any serious assessment, the best private dining in London. The club is genuinely private: membership by application and sponsor only, a waitlist of years, and a dining room (the main room upstairs) that has served generations of British establishment figures, arts world luminaries, and the kind of discreet international wealth that does not appear in newspapers. The food is traditional, excellent, and served by a room staff that has been there for decades in some cases. Access without membership requires a member willing to bring a guest — this is not the kind of club where the concierge relationship works. You need to know someone. If you do, having dinner at 5 Hertford Street is one of the genuinely irreplaceable dining experiences in London.</p>
+
+    <p><strong>Annabel's</strong> on Berkeley Square is the most storied name in London private club dining — founded in 1963, the original celebrity nightclub and restaurant that served everyone from the Beatles to Princess Margaret to Frank Sinatra. The current Annabel's, under the Birley Group, has been extensively renovated and now houses one of London's more ambitious restaurant kitchens within the club. It is still selective in membership but somewhat more accessible than 5 Hertford Street. The dining quality has improved significantly under the post-renovation regime.</p>
+
+    <p><strong>The Arts Club</strong> on Dover Street is the most accessible of the Mayfair private clubs with a serious dining room. Annual membership in the range of £2,500–£5,000, with an application process that is genuinely evaluative but not impenetrable for someone with the right professional profile. The dining room has been good for years and the programming — wine dinners, visiting chef events — is above average. For a London-based professional who travels there regularly or is based there, The Arts Club membership is among the best value propositions in London private dining.</p>
+
+    <p><strong>Soho House</strong> operates as the global entry-level private club — deliberately designed for creative-industry professionals at earlier career stages, with annual dues that are accessible and a global network that gives genuine value to frequent travelers across cities. The dining quality within Soho House properties varies significantly: Shoreditch House in London is genuinely good; some international properties are merely adequate. The value is less the specific dining and more the accumulated network and the access to a consistent standard of space across cities. If you are not already a member, an application is worth considering purely as a travel infrastructure investment.</p>
+
+    <div class="city-header">
+      <span class="city-name">Washington, DC</span>
+      <div class="city-rule"></div>
+    </div>
+
+    <p>DC's private club culture is institutional in character — the clubs here were built to serve government, military, and academic professionals, and they retain that orientation. The dining in most DC clubs is competent rather than ambitious; the value is in the access they provide to networks and spaces rather than in the food itself.</p>
+
+    <p><strong>The Metropolitan Club</strong> on H Street NW is the oldest and most prestigious of the DC clubs — founded in 1863, it has a formal dining room with a traditional menu that is served with considerable care. Membership is by invitation and sponsor, with dues in the range of a few thousand dollars annually. The dining room is not where DC's most adventurous cooking happens, but the room itself is historically significant and the membership list is a cross-section of the city's establishment that is useful in its own right.</p>
+
+    <p><strong>The Cosmos Club</strong> on Massachusetts Avenue in the Embassy Row neighborhood is organized around academic and intellectual distinction — members include a remarkable concentration of Nobel laureates, Pulitzer winners, and former cabinet officials. The dining room reflects the membership: serious rather than flashy, with a particular emphasis on the formalities of service that have largely disappeared from public dining. For someone with academic, scientific, or policy credentials, Cosmos Club membership is achievable and the dining, while not cutting-edge, is reliably good and the setting extraordinary.</p>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SECTION V: THE BEHAVIORAL PLAYBOOK                  -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <section class="section" id="playbook">
+    <div class="section-header">
+      <span class="section-number">Section V</span>
+      <h2>The Behavioral Playbook<br><em>What to Say, How to Act, How to Return</em></h2>
+      <p class="section-deck">Getting the seat is one problem. Being the kind of guest who gets invited back is a different problem entirely, and the more important one.</p>
+    </div>
+
+    <p>The following is organized by phase. Behavioral failures at any phase can close a door that took significant effort to open. The notes here are specific, not general — they reflect the actual operational norms and preferences of the restaurants and circuits described in this brief.</p>
+
+    <div class="playbook-section">
+      <div class="playbook-title">Phase 01 — The Inquiry</div>
+      <p><strong>Call during service prep.</strong> The windows: 10:00–11:30am (before lunch service), and 3:00–4:30pm (before dinner service). These are the periods when the maître d' and reservations manager have bandwidth to engage with an extended conversation. Calling during service — from noon to 2:30pm, or from 5:30pm onward — means you are interrupting a working kitchen and dining room. You will get a short answer, probably "no," and you will not be remembered favorably.</p>
+      <p><strong>Ask for the right person.</strong> Do not ask the host who picks up the phone if they have availability. Ask for the reservations manager or the maître d' by name, if you have found it. "May I speak with your reservations manager?" is the correct opening. At supper clubs and underground dinners, ask to speak with the organizer directly.</p>
+      <p><strong>Have an occasion.</strong> "I would love to bring my partner for our anniversary" is a better opening than "I was wondering if you have any openings." The occasion does not need to be exceptional — it needs to be real and articulable. "A close friend is visiting from abroad for the first time" is enough. Do not fabricate occasions; the dining world is small and these things are occasionally followed up.</p>
+      <p><strong>Do not negotiate on the phone.</strong> Do not ask about the corkage fee, the supplement for specific courses, or the flexibility on the tasting menu before you have confirmed the reservation. These are reasonable questions; they are not reasonable first questions. Asking them immediately signals that you are more focused on optimization than on experience, which is not the signal you want to send at this tier.</p>
+      <p><strong>Be specific.</strong> "Do you have anything available?" is a worse question than "I'm looking for a date between the 14th and 20th of next month — do you have any openings in that window?" The more specific your request, the more the person on the other end can actually help you.</p>
+    </div>
+
+    <div class="playbook-section">
+      <div class="playbook-title">Phase 02 — The Arrival</div>
+      <p><strong>Five minutes early, not "on time."</strong> At a counter restaurant especially, the other guests are seated and the service is beginning at the reservation time. Arriving at precisely 7:30pm for a 7:30pm seating means the staff has to manage your coat and seating while simultaneously managing the first courses for guests already at the counter. Being five minutes early is the correct arrival. Being late, even by five minutes, at a counter where you are one of eight people seated together is genuinely disruptive.</p>
+      <p><strong>State your name clearly.</strong> Give your name as it appears on the reservation, and the alternative name if you made it under someone else's name or a variant. If you have a special occasion note on the reservation, there is no need to mention it — the team will have read it. Don't repeat information they already have.</p>
+      <p><strong>The coat check.</strong> Always use it. Always tip. This is not about the money — a dollar or two per coat — it is about being the kind of guest who has done this before. The coat check attendant often knows the maître d' and the room staff better than any guest does. Being gracious to them is not a formality.</p>
+      <p><strong>Establish your history honestly.</strong> If you have dined at the restaurant before, say so — but accurately. "I've been here twice before, most recently about a year ago" is useful information that the maître d' will either confirm or won't contradict. Inflating your history is one of the few things that staff remember negatively and discuss with each other.</p>
+    </div>
+
+    <div class="playbook-section">
+      <div class="playbook-title">Phase 03 — At the Table or Counter</div>
+      <p><strong>The phone protocol at omakase.</strong> Your phone is put away when you sit down at the counter. This is not a rule most counters enforce explicitly — it is a norm that serious diners follow, and its absence marks you as someone who is attending rather than being present. The experience you paid for requires your attention to fully receive. Photographs of food are acceptable between courses — not during plating, not with flash, and not in a way that holds up the progression. A photograph taken quickly before you eat a course is reasonable. A photoshoot that delays the itamae is not.</p>
+      <p><strong>Do not ask for substitutions at omakase.</strong> This is the clearest possible signal that you have not understood the format. The omakase is a curated expression of the chef's current knowledge of their ingredients and their vision for how those ingredients should be presented. Asking to substitute an ingredient is asking the chef to modify their artistic statement to accommodate your preference. If you have genuine allergies — not preferences, but medically significant allergies — these must be disclosed during the booking process, not at the counter. The kitchen will accommodate; the counter is not the place for the conversation.</p>
+      <p><strong>Engage with the itamae.</strong> Not chatter — engagement. Ask about the fish: where it was sourced, what the season means for it, what the technique is. Ask about the rice: the vinegar, the ratio, whether it changes by season. The itamae at the best counters in the world are deeply knowledgeable and rarely get to share that knowledge with guests who are capable of receiving it. Being that guest changes the meal. It is also, in very practical terms, how you become a guest who gets recognized and prioritized on future visits.</p>
+      <p><strong>At supper clubs.</strong> The behavioral norms are different and more communal. Bring wine if you were invited to. Talk to the other guests — the host has often assembled the group deliberately, and the conversation is part of the event. Help clear if the format is casual enough to invite it. Express genuine appreciation to the cook, personally, before you leave. These events run on the energy of reciprocal enthusiasm; guests who absorb without contributing are noticed.</p>
+    </div>
+
+    <div class="playbook-section">
+      <div class="playbook-title">Phase 04 — The Exit</div>
+      <p><strong>Thank specifically.</strong> "Thank you for a wonderful evening" is fine. "Thank you for a wonderful evening — the [specific dish or course] was extraordinary, especially [specific element]" is what people remember. Specific compliments require that you were paying attention. They demonstrate that. They take thirty seconds and are remembered for years by the people who receive them. At a counter, thank the itamae directly — this requires a moment of eye contact and a clear statement, not an offhand comment while putting on your coat.</p>
+      <p><strong>The handwritten note.</strong> Sending a handwritten note after an exceptional dinner at this tier is so uncommon as to be genuinely remarkable. It takes ten minutes. A note that references a specific moment in the meal and is addressed to the maître d' or chef by name — sent to the restaurant's address — is one of the most effective relationship-building tools available at this tier. Multiple restaurateurs have mentioned, unprompted, in profiles and interviews, that they keep notes from particular guests. This is not a transaction; it is a signal about who you are.</p>
+      <p><strong>Do not rush the bill.</strong> At a tasting menu restaurant or counter experience, lingering for a few minutes after the final course is normal and expected. The kitchen has spent three hours with you. A two-minute departure is jarring. Settle in, finish your digestif, and depart when the room's energy naturally invites it.</p>
+    </div>
+
+    <div class="playbook-section">
+      <div class="playbook-title">Phase 05 — The Long Game: Becoming a Regular</div>
+      <p><strong>Before you leave, ask how to return.</strong> At an omakase counter or chef's table: "Is the best way to book for a future visit to call directly, or is there a specific window I should use?" This question is not presumptuous — it is useful for both parties, and the answer will often include specific intelligence that the restaurant does not publicly advertise. At a supper club or underground dinner: "How do I find out about future events?" and specifically requesting to be added to any mailing list.</p>
+      <p><strong>Build the relationship across the restaurant's ecosystem.</strong> The sommelier at a restaurant you want to frequent is often more accessible than the chef, and frequently more knowledgeable about the restaurant's specific collection and character. Having a genuine relationship with a sommelier — returning for bottles, asking for pairings, following their palate across vintages — is a pathway to the kind of access that cannot be booked. The cheese cart attendant. The pastry chef who comes out to explain the desserts. These are real people with institutional knowledge and significant informal power over the room's atmosphere.</p>
+      <p><strong>Spend appropriately.</strong> Restaurants at this tier make their money on wine and beverage. A guest who orders water and one glass of wine alongside a tasting menu is having a different financial relationship with the restaurant than a guest who engages seriously with the wine program. This is not a moral point — it is a structural observation. At venues where you want to build a relationship, engaging with the beverage program (even selectively) is part of the economics of being a desirable regular.</p>
+      <p><strong>The referral.</strong> Bringing serious, enthusiastic, well-behaved guests to a restaurant — people who tip well, engage genuinely, and leave the room better than they found it — is among the most valuable things a regular can do for a restaurant. At the supper club level, this is how the mailing list grows. At the chef's table level, a maître d' who knows that your guests will always be excellent is more willing to accommodate an unusual request. Your social network is, in this context, part of your credential.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════ -->
+  <!-- SECTION VI: ACCESS MATRIX                           -->
+  <!-- ════════════════════════════════════════════════════ -->
+  <section class="section" id="matrix">
+    <div class="section-header">
+      <span class="section-number">Appendix</span>
+      <h2>Quick-Reference<br><em>Access Matrix</em></h2>
+      <p class="section-deck">All venues summarized by booking method, timing, price tier, and access difficulty.</p>
+    </div>
+
+    <p style="font-size:0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">Price tiers: $ = under $150pp · $$ = $150–300pp · $$$ = $300–600pp · $$$$ = $600pp+ &nbsp;|&nbsp; All prices before beverage, tax, and gratuity. Verify before booking.</p>
+
+    <div style="overflow-x: auto;">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Venue</th>
+          <th>City</th>
+          <th>Type</th>
+          <th>Booking Method</th>
+          <th>Window</th>
+          <th>Price</th>
+          <th>Access</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The French Laundry</td>
+          <td>Yountville</td>
+          <td>Chef's Table / Dining Room</td>
+          <td>Tock (dining room); Direct inquiry (kitchen table)</td>
+          <td>60-day, 10am PT</td>
+          <td>$$$</td>
+          <td class="tier-cell-hard">Very Hard</td>
+        </tr>
+        <tr>
+          <td>Per Se</td>
+          <td>New York</td>
+          <td>Chef's Table / Dining Room</td>
+          <td>Tock (dining room); Direct / Concierge (kitchen)</td>
+          <td>60-day</td>
+          <td>$$$</td>
+          <td class="tier-cell-hard">Hard</td>
+        </tr>
+        <tr>
+          <td>Le Bernardin</td>
+          <td>New York</td>
+          <td>Chef's Table (kitchen)</td>
+          <td>Direct — events coordinator</td>
+          <td>3–6 weeks out</td>
+          <td>$$$</td>
+          <td class="tier-cell-medium">Accessible by Inquiry</td>
+        </tr>
+        <tr>
+          <td>Restaurant Daniel</td>
+          <td>New York</td>
+          <td>Chef's Table (kitchen)</td>
+          <td>Direct call</td>
+          <td>4–6 weeks out</td>
+          <td>$$$</td>
+          <td class="tier-cell-medium">Most Accessible of Tier</td>
+        </tr>
+        <tr>
+          <td>Jônt</td>
+          <td>Washington DC</td>
+          <td>Omakase counter</td>
+          <td>Resy</td>
+          <td>30-day, 12:01am</td>
+          <td>$$$</td>
+          <td class="tier-cell-hard">Hard — Fast Booking</td>
+        </tr>
+        <tr>
+          <td>Minibar</td>
+          <td>Washington DC</td>
+          <td>Avant-garde tasting counter</td>
+          <td>Tock</td>
+          <td>60-day, 10am ET</td>
+          <td>$$$</td>
+          <td class="tier-cell-medium">Manageable w/ Prep</td>
+        </tr>
+        <tr>
+          <td>Sushi Ogawa</td>
+          <td>Washington DC</td>
+          <td>Edomae omakase counter</td>
+          <td>Direct call / proprietary</td>
+          <td>Varies</td>
+          <td>$$</td>
+          <td class="tier-cell-open">Most Accessible DC Sushi</td>
+        </tr>
+        <tr>
+          <td>Masa</td>
+          <td>New York</td>
+          <td>Edomae omakase</td>
+          <td>Direct website / Mandarin concierge</td>
+          <td>Rolling</td>
+          <td>$$$$</td>
+          <td class="tier-cell-hard">Hard — High Price Screen</td>
+        </tr>
+        <tr>
+          <td>Sushi Nakazawa</td>
+          <td>New York</td>
+          <td>Edomae omakase</td>
+          <td>Resy</td>
+          <td>30-day, 12:01am</td>
+          <td>$$</td>
+          <td class="tier-cell-medium">Accessible — Speed Required</td>
+        </tr>
+        <tr>
+          <td>Sushi Noz</td>
+          <td>New York</td>
+          <td>Edomae omakase</td>
+          <td>Proprietary / Direct</td>
+          <td>Varies</td>
+          <td>$$$</td>
+          <td class="tier-cell-hard">Hard — Relationship Helps</td>
+        </tr>
+        <tr>
+          <td>Sushi Tetsu</td>
+          <td>London</td>
+          <td>Traditional sushi counter</td>
+          <td>Phone only — specific release days, 8am</td>
+          <td>Specific release days</td>
+          <td>$$</td>
+          <td class="tier-cell-hard">Very Hard — Phone Queue</td>
+        </tr>
+        <tr>
+          <td>Endo at the Rotunda</td>
+          <td>London</td>
+          <td>Contemporary Japanese counter</td>
+          <td>Direct website</td>
+          <td>Rolling</td>
+          <td>$$$</td>
+          <td class="tier-cell-medium">Manageable</td>
+        </tr>
+        <tr>
+          <td>MsMarmiteLover Underground</td>
+          <td>London</td>
+          <td>Supper club / home dinner</td>
+          <td>Mailing list / website</td>
+          <td>Event-based</td>
+          <td>$</td>
+          <td class="tier-cell-open">Accessible — Mailing List</td>
+        </tr>
+        <tr>
+          <td>Carousel</td>
+          <td>London</td>
+          <td>Residency / visiting chef</td>
+          <td>Direct booking / Tock</td>
+          <td>Rolling</td>
+          <td>$$</td>
+          <td class="tier-cell-open">Open to Public</td>
+        </tr>
+        <tr>
+          <td>5 Hertford Street</td>
+          <td>London</td>
+          <td>Members' club dining</td>
+          <td>Membership / Member guest</td>
+          <td>n/a</td>
+          <td>$$$</td>
+          <td class="tier-cell-invite">Membership or Invitation Only</td>
+        </tr>
+        <tr>
+          <td>Casa Cipriani</td>
+          <td>New York</td>
+          <td>Members' club dining</td>
+          <td>Membership (~$3,500–5,000/yr)</td>
+          <td>n/a</td>
+          <td>$$$</td>
+          <td class="tier-cell-medium">Membership — Accessible Application</td>
+        </tr>
+        <tr>
+          <td>DC Embassy Circuit</td>
+          <td>Washington DC</td>
+          <td>Cultural / diplomatic dinner</td>
+          <td>Embassy cultural office / mailing list</td>
+          <td>Event-based</td>
+          <td>Free–$</td>
+          <td class="tier-cell-open">Accessible — Requires Outreach</td>
+        </tr>
+        <tr>
+          <td>DC Wine Bar Pop-ups</td>
+          <td>Washington DC</td>
+          <td>Chef pop-up / collaborative dinner</td>
+          <td>Instagram / Eventbrite / Tock</td>
+          <td>1–2 weeks advance</td>
+          <td>$$</td>
+          <td class="tier-cell-open">Accessible — Instagram Monitor</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <hr class="rule" style="margin-top: 2.5rem;">
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.5rem; margin-top: 1.5rem;">
+      <div style="display:flex; align-items: center; gap: 0.5rem;">
+        <span class="venue-tier tier-open" style="font-size:0.5rem; padding: 0.2rem 0.4rem;">Open</span>
+        <span style="font-family: var(--font-mono); font-size:0.58rem; color: var(--text-muted);">Standard channels work</span>
+      </div>
+      <div style="display:flex; align-items: center; gap: 0.5rem;">
+        <span class="venue-tier tier-medium" style="font-size:0.5rem; padding: 0.2rem 0.4rem;">Medium</span>
+        <span style="font-family: var(--font-mono); font-size:0.58rem; color: var(--text-muted);">Requires preparation</span>
+      </div>
+      <div style="display:flex; align-items: center; gap: 0.5rem;">
+        <span class="venue-tier tier-hard" style="font-size:0.5rem; padding: 0.2rem 0.4rem;">Hard</span>
+        <span style="font-family: var(--font-mono); font-size:0.58rem; color: var(--text-muted);">Significant effort required</span>
+      </div>
+      <div style="display:flex; align-items: center; gap: 0.5rem;">
+        <span class="venue-tier tier-invite" style="font-size:0.5rem; padding: 0.2rem 0.4rem;">Invite</span>
+        <span style="font-family: var(--font-mono); font-size:0.58rem; color: var(--text-muted);">Relationship essential</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-mark">Private Dining Intelligence — Edition I</span>
+    <span class="footer-mark">nickcarbone.github.io</span>
+  </footer>
+
+</body>
+</html>
